@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* BACKDROPS */
+ body.home-page {
+      background-image: url('assets/background3.png');
+      background-size: cover;          /* Covers the whole viewport */
+      background-position: center;     /* Centers the image */
+      background-repeat: no-repeat;    /* Prevents tiling */
+      background-attachment: fixed;    /* Keeps background fixed when scrolling */
+      min-height: 100vh;              /* Ensures full viewport height */
+ }
+
+   
+ body.main-menu-page {
+      background-image: url('assets/backdrop4.png');
+      background-size: cover;          /* Covers the whole viewport */
+      background-position: center;     /* Centers the image */
+      background-repeat: no-repeat;    /* Prevents tiling */
+      background-attachment: fixed;    /* Keeps background fixed when scrolling */
+      min-height: 100vh;              /* Ensures full viewport height */
+
+}
+
+/* WORDING / TITLES */
+ .menu-title {
+  font-family: 'Uncial Antiqua', cursive;
+  color: hsl(270, 100%, 98%);
+  
+  margin-top: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  font-size: 5rem;
+  letter-spacing: 5px;
+  text-align: center;
+  text-shadow: 
+    0 0 5px #cc9fff, 
+    0 0 10px #a46cf2, 
+    0 0 20px #8745ff;
+
+  /* Optional smooth fade-in */
+  animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.subtitle{
+  font-family: 'Uncial Antiqua', cursive;
+  color: hsl(270, 100%, 98%);
+
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 2rem;
+  letter-spacing: 5px;
+  text-shadow: 
+    0 0 5px #cc9fff, 
+    0 0 10px #a46cf2, 
+    0 0 20px #8745ff;
+
+  /* Optional smooth fade-in */
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* CHOOSABLE BUTTONS */
+.menu-paths, .zodiac-paths{
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Ensures same vertical alignment */
+  gap: 20px; /* Spacing between the buttons */
+  margin-top: 80px; /* Controls vertical distance */
+  margin-left: 80px;
+}
+
+
+.intentions-firstrow{
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.intentions-secondrow{
+  margin-left: 50px;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  animation: fadeIn 1.5s ease-out;
+  
+}
+
+.menu-path-spiritual{
+    /* margin-left: 10px; */
+    margin-top: 60px;
+    
+    /* Optional smooth fade-in */
+    animation: fadeIn 1.5s ease-out;
+}
+
+.menu-path-zodiac{
+    margin-left: 200px;
+    margin-top: 60px;
+
+    /* Optional smooth fade-in */
+    animation: fadeIn 1.5s ease-out;
+}
+
+.menu-path-spiritual:hover, .menu-path-zodiac:hover, .intentions-firstrow1:hover, .intentions-firstrow2:hover, .intentions-firstrow3:hover, .intentions-secondrow1:hover, .intentions-secondrow2:hover, .intentions-secondrow3:hover{
+    filter: drop-shadow(0 0 12px rgba(255,255,255,0.7));
+}
+
+.zodiac-paths{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 50px;
+  justify-items: center;
+  padding: 10px;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.zodiac-paths img{
+ width:200px;
+ height:auto;
+}
+
+.zodiac-thirdrow1{
+ width:600px;
+ height:auto
+}
+
+
+
+/* ZODIAC CARDS */
+.zodiac-cards{
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.zodiac-cards img{
+  width: 250px;
+} 
+
+/* .card-back {
+  position: absolute;
+  backface-visibility:hidden;
+  border-radius: 12px;
+  
+   transform: rotateY(180deg); 
+ }  */
+
+ /* .card.flipped{
+  transform: rotateY(180deg);
+}  */
+
+ .card {
+  width: 250px;
+  height: 400px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-front,
+.card-back {
+  position: absolute;  
+  transition: opacity 0.6s ease;
+  top: 0;
+  left: 0;
+}
+
+ .card-front {
+  z-index: 2; 
+  opacity: 1;
+}
+
+.card-back {
+  z-index: 1;
+  opacity: 0;
+}
+ 
+.card.flipped .card-front {
+  opacity: 0;
+}
+
+.card.flipped .card-back {
+  opacity: 1;
+} 
+
+
+ /* BUTTONS */
+ 
+ .home-btn {
+   position: fixed;
+   top: 20px;
+   left: 20px;
+
+   width: 60px;
+   height: 60px;
+   background-image: url('assets/homeicon.png');
+   background-size: contain;
+   background-position: top left;
+   
+   cursor: pointer;
+ }
+
+ .home-btn:hover, .zodiac-icon:hover {
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.7));
+ } 
+
+.enter-btn {
+    position: absolute;
+    top: 65%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    
+    /* Responsive sizing */
+    padding: 3vw 6vw;              /* Scales with screen width */
+    font-size: 1.5vw;              /* Scales font size */
+    max-width: 300px;
+    min-width: 120px;
+    /* Button styling */
+    background: transparent;  /* Transparent witchy vibe */
+    padding: 70px 130px;
+    font-size: 1.2em;
+    font-family: 'Cinzel', serif;          /* Match your title font */
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: none;    
+    
+}
+
+.goback-btn {
+   position: relative;
+
+   width: 60px;
+   height: 60px;
+   background-image: url('assets/returnbutton.png');
+   background-size: contain;
+   background-position: bottom center;
+   
+   cursor: pointer;
+   margin: 60px auto 0; /* Push it down and center it */
+   display: block;
+}
+
+ .goback-btn:hover {
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.7));
+ }
